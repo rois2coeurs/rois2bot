@@ -1,6 +1,6 @@
 {
   "name": "rois2bot",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "Un bot",
   "main": "index.js",
   "scripts": {
