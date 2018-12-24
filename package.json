@@ -1,0 +1,14 @@
+{
+  "name": "rois2bot",
+  "version": "0.1",
+  "description": "Un bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rois2coeurs",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
