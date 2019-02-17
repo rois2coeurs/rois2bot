@@ -2,35 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 // _____-----=====[Réaction role]=====-----_____
-const yourID = "234647775621414912";
-const setupCMD = "!createrolemessage"
 let initialMessage = `**Réagissez aux messages ci-dessous pour recevoir le rôle associé. Si vous souhaitez supprimer le rôle, supprimez simplement votre réaction!**`;
-const roles = ["Membre"];
-const reactions = ["✅"];
-
-if (roles.length !== reactions.length) throw "La liste des rôles et la liste des réactions ne sont pas de la même longueur!";
-
-function generateMessages(){
-    var messages = [];
-    messages.push(initialMessage);
-    for (let role of roles) messages.push(`==================\nRéagis en dessous pour obtenir le rôle : **"${role}"** !`); //DONT CHANGE THIS
-    return messages;
-}
-
-
-client.on("message", message => {
-    if (message.author.id == yourID && message.content.toLowerCase() == setupCMD){
-        var toSend = generateMessages();
-        let mappedArray = [[toSend[0], false], ...toSend.slice(1).map( (message, idx) => [message, reactions[idx]])];
-        for (let mapObj of mappedArray){
-            message.channel.send(mapObj[0]).then( sent => {
-                if (mapObj[1]){
-                  sent.react(mapObj[1]);  
-                } 
-            });
-        }
-    }
-})
 
 client.on('raw', event => {
     if (event.t === 'MESSAGE_REACTION_ADD' || event.t == "MESSAGE_REACTION_REMOVE"){
