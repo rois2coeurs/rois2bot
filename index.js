@@ -120,7 +120,7 @@ client.on('message', message => {
         .setColor("#ff5c33")
         .setTitle(`Informations sur l'utilisateur : ${message.author.username}`)
         .addField(`:id: ID de l'utilisateur :`, msgauthor, true)
-        .addField(`:calendar_spiral: Date de création du compte :`, userCreateDate[1] + ` ` + userCreateDate[2] + ` ` + userCreateDate [3])
+        .addField(`:calendar_spiral: Date de création du compte :`, userCreateDate[2] + ` ` + userCreateDate[1] + ` ` + userCreateDate [3])
         .setThumbnail(message.author.avatarURL)
         message.channel.send({embed: stats_embed})
     }
