@@ -41,6 +41,7 @@ client.on('ready', function() {
     }
 });
 
+// Message de bienvenue
 client.on('guildMemberAdd', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'gare' || ch.name === 'bienvenue' || ch.name === 'aéroport');
   if (!channel) return;
@@ -50,6 +51,7 @@ client.on('guildMemberAdd', member => {
   channel.send(welcome)
 });
 
+// Message d'aurevoire
 client.on('guildMemberRemove', member => {
   const channel = member.guild.channels.find(ch => ch.name === 'gare' || ch.name === 'bienvenue' || ch.name === 'aéroport');
   if (!channel) return;
@@ -59,6 +61,7 @@ client.on('guildMemberRemove', member => {
   channel.send(welcome)
 });
 
+//commande r!help
 client.on('message', message => {
     if(message.content === 'r!help'){
         var help = new Discord.RichEmbed()
@@ -70,7 +73,7 @@ client.on('message', message => {
         help.setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
         message.channel.send(help)
     }
-
+    //commande r!botinfo
     else if (message.content === 'r!botinfo') {
       var botinfo = new Discord.RichEmbed()
         .setTitle(":chart_with_upwards_trend: Informations sur le robot :chart_with_downwards_trend:",)
@@ -83,7 +86,7 @@ client.on('message', message => {
         .setFooter(`Demandé par ${message.author.username}`, message.author.displayAvatarURL)
       message.channel.send(botinfo)
     }
-
+    //commande r!userinfo
     else if (message.content === 'r!userinfo') {
         var userCreateDate = message.author.createdAt.toString().split(" ");
         var msgauthor = message.author.id;
